@@ -28,7 +28,15 @@ let holdFour = false
 let holdFive = false
 
 // Assign inital value to the roll number
-let rollNumber = 0
+let roll = 0
+
+let rollNumber = () => {
+  if (roll === 2) {
+    rollButton.disabled = true
+  } else {
+    roll ++
+  }
+}
 
 // Roll dice function to randomize non-held dice
 const rollDice = () => {
@@ -153,21 +161,13 @@ const rollDice = () => {
   }
 }
 
-
 // Add event listener to each button
-scoreButtons[0].addEventListener("click", () =>{})
-scoreButtons[1].addEventListener("click", () =>{})
-scoreButtons[2].addEventListener("click", () =>{})
-scoreButtons[3].addEventListener("click", () =>{})
-scoreButtons[4].addEventListener("click", () =>{})
-scoreButtons[5].addEventListener("click", () =>{})
-scoreButtons[6].addEventListener("click", () =>{})
-scoreButtons[7].addEventListener("click", () =>{})
-scoreButtons[8].addEventListener("click", () =>{})
-scoreButtons[9].addEventListener("click", () =>{})
-scoreButtons[10].addEventListener("click", () =>{})
-scoreButtons[11].addEventListener("click", () =>{})
-scoreButtons[12].addEventListener("click", () =>{})
+scoreButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    button.disabled = true
+  })
+})
+
 holdButtons[0].addEventListener("click", () => {
     holdOne = !holdOne
   })
@@ -185,6 +185,7 @@ holdButtons[4].addEventListener("click", () => {
 })
 rollButton.addEventListener("click", () => {
   rollDice()
+  rollNumber()
 })
 
 // resetGame.addEventListener("click", () =>{})
