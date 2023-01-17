@@ -267,9 +267,21 @@ scoreButtons[0].addEventListener("click", () => {
     aces.innerHTML = "3"
   } else if (allDice[0].innerHTML === "1" && allDice[2].innerHTML === "1" && allDice[3].innerHTML === "1" && allDice[1].innerHTML !== "1" & allDice[4].innerHTML !== "1") {
     aces.innerHTML = "3"
+  } else if (allDice[0].innerHTML === "1" && allDice[1].innerHTML === "1" && allDice[2].innerHTML === "1" && allDice[3].innerHTML === "1" & allDice[4].innerHTML !== "1") {
+    aces.innerHTML = "4"
+  } else if (allDice[1].innerHTML === "1" && allDice[2].innerHTML === "1" && allDice[3].innerHTML === "1" && allDice[4].innerHTML === "1" & allDice[0].innerHTML !== "1") {
+    aces.innerHTML = "4"
+  } else if (allDice[0].innerHTML === "1" && allDice[2].innerHTML === "1" && allDice[3].innerHTML === "1" && allDice[4].innerHTML === "1" & allDice[1].innerHTML !== "1") {
+    aces.innerHTML = "4"
+  } else if (allDice[0].innerHTML === "1" && allDice[1].innerHTML === "1" && allDice[3].innerHTML === "1" && allDice[4].innerHTML === "1" & allDice[2].innerHTML !== "1") {
+    aces.innerHTML = "4"
+  } else if (allDice[0].innerHTML === "1" && allDice[1].innerHTML === "1" && allDice[2].innerHTML === "1" && allDice[4].innerHTML === "1" & allDice[3].innerHTML !== "1") {
+    aces.innerHTML = "4"
+  } else if (allDice[0].innerHTML === "1" && allDice[1].innerHTML === "1" && allDice[2].innerHTML === "1" && allDice[3].innerHTML === "1" & allDice[4].innerHTML === "1") {
+    aces.innerHTML = "5"
   } else {
     aces.innerHTML = "0"
-  }            
+  }                  
 })
 
 scoreButtons[1].addEventListener("click", () => {
