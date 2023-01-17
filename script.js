@@ -20,6 +20,27 @@ const rollButton = document.querySelector("#roll")
 
 const resetButton = document.querySelector("#reset-game")
 
+let aces = scoreSections[0]
+let twos = scoreSections[1]
+let threes = scoreSections[2]
+let fours = scoreSections[3]
+let fives = scoreSections[4]
+let sixes = scoreSections[5]
+let threeKind = scoreSections[6]
+let fourKind = scoreSections[7]
+let fullHouse = scoreSections[8]
+let smStraight = scoreSections[9]
+let lgStraight = scoreSections[10]
+let chance = scoreSections[11]
+let yahtzee = scoreSections[12]
+let upper = scoreSections[13]
+let lower = scoreSections[14]
+let bonus = scoreSections[15]
+let grandTotal = scoreSections[16]
+
+// Function to total scoring dynamically
+
+
 // Assign boolean to hold buttons
 let holdOne = false
 let holdTwo = false
@@ -27,16 +48,47 @@ let holdThree = false
 let holdFour = false
 let holdFive = false
 
-// Assign inital value to the roll number
+// Assign inital value to the roll number and disable all scoring options
 let roll = 0
+
+const disableScoring = () => {
+  scoreButtons.forEach((button) => {
+  button.disabled = true
+})
+}
+
+const enableScoring = () => {
+  scoreButtons.forEach((button) => {
+  button.disabled = false
+})
+}
+
+const disableHold = () => {
+  holdButtons.forEach((button) => {
+  button.disabled = true
+})
+}
+
+const enableHold = () => {
+  holdButtons.forEach((button) => {
+  button.disabled = false
+})
+}
+
+disableScoring()
+disableHold()
 
 let rollNumber = () => {
   if (roll === 2) {
     rollButton.disabled = true
+    disableHold()
   } else {
     roll ++
+    enableScoring()
+    enableHold()
+    }
   }
-}
+
 
 // Roll dice function to randomize non-held dice
 const rollDice = () => {
@@ -162,11 +214,112 @@ const rollDice = () => {
 }
 
 // Add event listener to each button
-scoreButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    button.disabled = true
-  })
+
+scoreButtons[0].addEventListener("click", () => {
+  scoreButtons[0].disabled = true
+  if (allDice[0].innerHTML === "1" && allDice[1].innerHTML !== "1" && allDice[2].innerHTML !== "1" && allDice[3].innerHTML !== "1" & allDice[4].innerHTML !== "1") {
+    aces.innerHTML = "1"
+  } else if (allDice[1].innerHTML === "1" && allDice[0].innerHTML !== "1" && allDice[2].innerHTML !== "1" && allDice[3].innerHTML !== "1" & allDice[4].innerHTML !== "1") {
+    aces.innerHTML = "1"
+  } else if (allDice[2].innerHTML === "1" && allDice[0].innerHTML !== "1" && allDice[1].innerHTML !== "1" && allDice[3].innerHTML !== "1" & allDice[4].innerHTML !== "1") {
+    aces.innerHTML = "1"
+  } else if (allDice[3].innerHTML === "1" && allDice[0].innerHTML !== "1" && allDice[1].innerHTML !== "1" && allDice[2].innerHTML !== "1" & allDice[4].innerHTML !== "1") {
+    aces.innerHTML = "1"
+  } else if (allDice[4].innerHTML === "1" && allDice[0].innerHTML !== "1" && allDice[1].innerHTML !== "1" && allDice[2].innerHTML !== "1" & allDice[3].innerHTML !== "1") {
+    aces.innerHTML = "1"
+  } else if (allDice[0].innerHTML === "1" && allDice[1].innerHTML === "1" && allDice[2].innerHTML !== "1" && allDice[3].innerHTML !== "1" & allDice[4].innerHTML !== "1") {
+    aces.innerHTML = "2"
+  } else if (allDice[0].innerHTML === "1" && allDice[2].innerHTML === "1" && allDice[1].innerHTML !== "1" && allDice[3].innerHTML !== "1" & allDice[4].innerHTML !== "1") {
+    aces.innerHTML = "2"
+  } else if (allDice[0].innerHTML === "1" && allDice[3].innerHTML === "1" && allDice[1].innerHTML !== "1" && allDice[2].innerHTML !== "1" & allDice[4].innerHTML !== "1") {
+    aces.innerHTML = "2"
+  } else if (allDice[0].innerHTML === "1" && allDice[4].innerHTML === "1" && allDice[1].innerHTML !== "1" && allDice[2].innerHTML !== "1" & allDice[3].innerHTML !== "1") {
+    aces.innerHTML = "2"
+  } else if (allDice[1].innerHTML === "1" && allDice[2].innerHTML === "1" && allDice[0].innerHTML !== "1" && allDice[3].innerHTML !== "1" & allDice[4].innerHTML !== "1") {
+    aces.innerHTML = "2"
+  } else if (allDice[1].innerHTML === "1" && allDice[3].innerHTML === "1" && allDice[0].innerHTML !== "1" && allDice[2].innerHTML !== "1" & allDice[4].innerHTML !== "1") {
+    aces.innerHTML = "2"
+  } else if (allDice[1].innerHTML === "1" && allDice[4].innerHTML === "1" && allDice[0].innerHTML !== "1" && allDice[2].innerHTML !== "1" & allDice[3].innerHTML !== "1") {
+    aces.innerHTML = "2"
+  } else if (allDice[2].innerHTML === "1" && allDice[3].innerHTML === "1" && allDice[0].innerHTML !== "1" && allDice[1].innerHTML !== "1" & allDice[4].innerHTML !== "1") {
+    aces.innerHTML = "2"
+  } else if (allDice[2].innerHTML === "1" && allDice[4].innerHTML === "1" && allDice[0].innerHTML !== "1" && allDice[1].innerHTML !== "1" & allDice[3].innerHTML !== "1") {
+    aces.innerHTML = "2"
+  } else if (allDice[3].innerHTML === "1" && allDice[4].innerHTML === "1" && allDice[0].innerHTML !== "1" && allDice[1].innerHTML !== "1" & allDice[2].innerHTML !== "1") {
+    aces.innerHTML = "2"
+  } else if (allDice[0].innerHTML === "1" && allDice[1].innerHTML === "1" && allDice[2].innerHTML === "1" && allDice[3].innerHTML !== "1" & allDice[4].innerHTML !== "1") {
+    aces.innerHTML = "3"
+  } else if (allDice[0].innerHTML === "1" && allDice[1].innerHTML === "1" && allDice[3].innerHTML === "1" && allDice[2].innerHTML !== "1" & allDice[4].innerHTML !== "1") {
+    aces.innerHTML = "3"
+  } else if (allDice[0].innerHTML === "1" && allDice[1].innerHTML === "1" && allDice[4].innerHTML === "1" && allDice[2].innerHTML !== "1" & allDice[3].innerHTML !== "1") {
+    aces.innerHTML = "3"
+  } else if (allDice[1].innerHTML === "1" && allDice[2].innerHTML === "1" && allDice[3].innerHTML === "1" && allDice[0].innerHTML !== "1" & allDice[4].innerHTML !== "1") {
+    aces.innerHTML = "3"
+  } else if (allDice[1].innerHTML === "1" && allDice[2].innerHTML === "1" && allDice[4].innerHTML === "1" && allDice[0].innerHTML !== "1" & allDice[3].innerHTML !== "1") {
+    aces.innerHTML = "3"
+  } else if (allDice[2].innerHTML === "1" && allDice[3].innerHTML === "1" && allDice[4].innerHTML === "1" && allDice[0].innerHTML !== "1" & allDice[1].innerHTML !== "1") {
+    aces.innerHTML = "3"
+  } else if (allDice[0].innerHTML === "1" && allDice[3].innerHTML === "1" && allDice[4].innerHTML === "1" && allDice[1].innerHTML !== "1" & allDice[2].innerHTML !== "1") {
+    aces.innerHTML = "3"
+  } else if (allDice[1].innerHTML === "1" && allDice[3].innerHTML === "1" && allDice[4].innerHTML === "1" && allDice[0].innerHTML !== "1" & allDice[2].innerHTML !== "1") {
+    aces.innerHTML = "3"
+  } else if (allDice[0].innerHTML === "1" && allDice[2].innerHTML === "1" && allDice[4].innerHTML === "1" && allDice[1].innerHTML !== "1" & allDice[3].innerHTML !== "1") {
+    aces.innerHTML = "3"
+  } else if (allDice[0].innerHTML === "1" && allDice[2].innerHTML === "1" && allDice[3].innerHTML === "1" && allDice[1].innerHTML !== "1" & allDice[4].innerHTML !== "1") {
+    aces.innerHTML = "3"
+  } else {
+    aces.innerHTML = "0"
+  }            
 })
+
+scoreButtons[1].addEventListener("click", () => {
+  scoreButtons[1].disabled = true
+})
+
+scoreButtons[2].addEventListener("click", () => {
+  scoreButtons[2].disabled = true
+})
+
+scoreButtons[3].addEventListener("click", () => {
+  scoreButtons[3].disabled = true
+})
+
+scoreButtons[4].addEventListener("click", () => {
+  scoreButtons[4].disabled = true
+})
+
+scoreButtons[5].addEventListener("click", () => {
+  scoreButtons[5].disabled = true
+})
+
+scoreButtons[6].addEventListener("click", () => {
+  scoreButtons[6].disabled = true
+})
+
+scoreButtons[7].addEventListener("click", () => {
+  scoreButtons[7].disabled = true
+})
+
+scoreButtons[8].addEventListener("click", () => {
+  scoreButtons[8].disabled = true
+})
+
+scoreButtons[9].addEventListener("click", () => {
+  scoreButtons[9].disabled = true
+})
+
+scoreButtons[10].addEventListener("click", () => {
+  scoreButtons[10].disabled = true
+})
+
+scoreButtons[11].addEventListener("click", () => {
+  scoreButtons[11].disabled = true
+})
+
+scoreButtons[12].addEventListener("click", () => {
+  scoreButtons[12].disabled = true
+})
+
 
 holdButtons[0].addEventListener("click", () => {
     holdOne = !holdOne
