@@ -424,6 +424,71 @@ scoreButtons[2].addEventListener("click", () => {
 
 scoreButtons[3].addEventListener("click", () => {
   scoreButtons[3].disabled = true
+  if (allDice[0].innerHTML === "4" && allDice[1].innerHTML !== "4" && allDice[2].innerHTML !== "4" && allDice[3].innerHTML !== "4" & allDice[4].innerHTML !== "4") {
+    fours.innerHTML = "4"
+  } else if (allDice[1].innerHTML === "4" && allDice[0].innerHTML !== "4" && allDice[2].innerHTML !== "4" && allDice[3].innerHTML !== "4" & allDice[4].innerHTML !== "4") {
+    fours.innerHTML = "4"
+  } else if (allDice[2].innerHTML === "4" && allDice[0].innerHTML !== "4" && allDice[1].innerHTML !== "4" && allDice[3].innerHTML !== "4" & allDice[4].innerHTML !== "4") {
+    fours.innerHTML = "4"
+  } else if (allDice[3].innerHTML === "4" && allDice[0].innerHTML !== "4" && allDice[1].innerHTML !== "4" && allDice[2].innerHTML !== "4" & allDice[4].innerHTML !== "4") {
+    fours.innerHTML = "4"
+  } else if (allDice[4].innerHTML === "4" && allDice[0].innerHTML !== "4" && allDice[1].innerHTML !== "4" && allDice[2].innerHTML !== "4" & allDice[3].innerHTML !== "4") {
+    fours.innerHTML = "4"
+  } else if (allDice[0].innerHTML === "4" && allDice[1].innerHTML === "4" && allDice[2].innerHTML !== "4" && allDice[3].innerHTML !== "4" & allDice[4].innerHTML !== "4") {
+    fours.innerHTML = "8"
+  } else if (allDice[0].innerHTML === "4" && allDice[2].innerHTML === "4" && allDice[1].innerHTML !== "4" && allDice[3].innerHTML !== "4" & allDice[4].innerHTML !== "4") {
+    fours.innerHTML = "8"
+  } else if (allDice[0].innerHTML === "4" && allDice[3].innerHTML === "4" && allDice[1].innerHTML !== "4" && allDice[2].innerHTML !== "4" & allDice[4].innerHTML !== "4") {
+    fours.innerHTML = "8"
+  } else if (allDice[0].innerHTML === "4" && allDice[4].innerHTML === "4" && allDice[1].innerHTML !== "4" && allDice[2].innerHTML !== "4" & allDice[3].innerHTML !== "4") {
+    fours.innerHTML = "8"
+  } else if (allDice[1].innerHTML === "4" && allDice[2].innerHTML === "4" && allDice[0].innerHTML !== "4" && allDice[3].innerHTML !== "4" & allDice[4].innerHTML !== "4") {
+    fours.innerHTML = "8"
+  } else if (allDice[1].innerHTML === "4" && allDice[3].innerHTML === "4" && allDice[0].innerHTML !== "4" && allDice[2].innerHTML !== "4" & allDice[4].innerHTML !== "4") {
+    fours.innerHTML = "8"
+  } else if (allDice[1].innerHTML === "4" && allDice[4].innerHTML === "4" && allDice[0].innerHTML !== "4" && allDice[2].innerHTML !== "4" & allDice[3].innerHTML !== "4") {
+    fours.innerHTML = "8"
+  } else if (allDice[2].innerHTML === "4" && allDice[3].innerHTML === "4" && allDice[0].innerHTML !== "4" && allDice[1].innerHTML !== "4" & allDice[4].innerHTML !== "4") {
+    fours.innerHTML = "8"
+  } else if (allDice[2].innerHTML === "4" && allDice[4].innerHTML === "4" && allDice[0].innerHTML !== "4" && allDice[1].innerHTML !== "4" & allDice[3].innerHTML !== "4") {
+    fours.innerHTML = "8"
+  } else if (allDice[3].innerHTML === "4" && allDice[4].innerHTML === "4" && allDice[0].innerHTML !== "4" && allDice[1].innerHTML !== "4" & allDice[2].innerHTML !== "4") {
+    fours.innerHTML = "8"
+  } else if (allDice[0].innerHTML === "4" && allDice[1].innerHTML === "4" && allDice[2].innerHTML === "4" && allDice[3].innerHTML !== "4" & allDice[4].innerHTML !== "4") {
+    fours.innerHTML = "12"
+  } else if (allDice[0].innerHTML === "4" && allDice[1].innerHTML === "4" && allDice[3].innerHTML === "4" && allDice[2].innerHTML !== "4" & allDice[4].innerHTML !== "4") {
+    fours.innerHTML = "12"
+  } else if (allDice[0].innerHTML === "4" && allDice[1].innerHTML === "4" && allDice[4].innerHTML === "4" && allDice[2].innerHTML !== "4" & allDice[3].innerHTML !== "4") {
+    fours.innerHTML = "12"
+  } else if (allDice[1].innerHTML === "4" && allDice[2].innerHTML === "4" && allDice[3].innerHTML === "4" && allDice[0].innerHTML !== "4" & allDice[4].innerHTML !== "4") {
+    fours.innerHTML = "12"
+  } else if (allDice[1].innerHTML === "4" && allDice[2].innerHTML === "4" && allDice[4].innerHTML === "4" && allDice[0].innerHTML !== "4" & allDice[3].innerHTML !== "4") {
+    fours.innerHTML = "12"
+  } else if (allDice[2].innerHTML === "4" && allDice[3].innerHTML === "4" && allDice[4].innerHTML === "4" && allDice[0].innerHTML !== "4" & allDice[1].innerHTML !== "4") {
+    fours.innerHTML = "12"
+  } else if (allDice[0].innerHTML === "4" && allDice[3].innerHTML === "4" && allDice[4].innerHTML === "4" && allDice[1].innerHTML !== "4" & allDice[2].innerHTML !== "4") {
+    fours.innerHTML = "12"
+  } else if (allDice[1].innerHTML === "4" && allDice[3].innerHTML === "4" && allDice[4].innerHTML === "4" && allDice[0].innerHTML !== "4" & allDice[2].innerHTML !== "4") {
+    fours.innerHTML = "12"
+  } else if (allDice[0].innerHTML === "4" && allDice[2].innerHTML === "4" && allDice[4].innerHTML === "4" && allDice[1].innerHTML !== "4" & allDice[3].innerHTML !== "4") {
+    fours.innerHTML = "12"
+  } else if (allDice[0].innerHTML === "4" && allDice[2].innerHTML === "4" && allDice[3].innerHTML === "4" && allDice[1].innerHTML !== "4" & allDice[4].innerHTML !== "4") {
+    fours.innerHTML = "12"
+  } else if (allDice[0].innerHTML === "4" && allDice[1].innerHTML === "4" && allDice[2].innerHTML === "4" && allDice[3].innerHTML === "4" & allDice[4].innerHTML !== "4") {
+    fours.innerHTML = "16"
+  } else if (allDice[1].innerHTML === "4" && allDice[2].innerHTML === "4" && allDice[3].innerHTML === "4" && allDice[4].innerHTML === "4" & allDice[0].innerHTML !== "4") {
+    fours.innerHTML = "16"
+  } else if (allDice[0].innerHTML === "4" && allDice[2].innerHTML === "4" && allDice[3].innerHTML === "4" && allDice[4].innerHTML === "4" & allDice[1].innerHTML !== "4") {
+    fours.innerHTML = "16"
+  } else if (allDice[0].innerHTML === "4" && allDice[1].innerHTML === "4" && allDice[3].innerHTML === "4" && allDice[4].innerHTML === "4" & allDice[2].innerHTML !== "4") {
+    fours.innerHTML = "16"
+  } else if (allDice[0].innerHTML === "4" && allDice[1].innerHTML === "4" && allDice[2].innerHTML === "4" && allDice[4].innerHTML === "4" & allDice[3].innerHTML !== "4") {
+    fours.innerHTML = "16"
+  } else if (allDice[0].innerHTML === "4" && allDice[1].innerHTML === "4" && allDice[2].innerHTML === "4" && allDice[3].innerHTML === "4" & allDice[4].innerHTML === "3") {
+    fours.innerHTML = "20"
+  } else {
+    fours.innerHTML = "0"
+  }
 })
 
 scoreButtons[4].addEventListener("click", () => {
