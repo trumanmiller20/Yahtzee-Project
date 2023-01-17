@@ -93,7 +93,7 @@ disableHold()
 
 // Function to establish allotted rolls (3), and determine when scoring and holding are enabled based on roll value
 let rollNumber = () => {
-  if (roll === 2) {
+  if (roll === 25) {
     rollButton.disabled = true
     disableHold()
   } else {
@@ -689,6 +689,29 @@ scoreButtons[7].addEventListener("click", () => {
 
 scoreButtons[8].addEventListener("click", () => {
   scoreButtons[8].disabled = true
+  if (allDice[0].innerHTML === allDice[1].innerHTML && allDice[2].innerHTML === allDice[3].innerHTML && allDice[2].innerHTML === allDice[4].innerHTML && allDice[2].innerHTML !== allDice[0].innerHTML) {
+    fullHouse.innerHTML = "25"
+  } else if (allDice[0].innerHTML === allDice[2].innerHTML && allDice[1].innerHTML === allDice[3].innerHTML && allDice[1].innerHTML === allDice[4].innerHTML && allDice[1].innerHTML !== allDice[0].innerHTML) {
+    fullHouse.innerHTML = "25"
+  }  else if (allDice[0].innerHTML === allDice[3].innerHTML && allDice[1].innerHTML === allDice[2].innerHTML && allDice[1].innerHTML === allDice[4].innerHTML && allDice[1].innerHTML !== allDice[0].innerHTML) {
+    fullHouse.innerHTML = "25"
+  } else if (allDice[0].innerHTML === allDice[4].innerHTML && allDice[1].innerHTML === allDice[2].innerHTML && allDice[1].innerHTML === allDice[3].innerHTML && allDice[1].innerHTML !== allDice[0].innerHTML) {
+    fullHouse.innerHTML = "25"
+  } else if (allDice[1].innerHTML === allDice[2].innerHTML && allDice[0].innerHTML === allDice[3].innerHTML && allDice[0].innerHTML === allDice[4].innerHTML && allDice[0].innerHTML !== allDice[1].innerHTML) {
+    fullHouse.innerHTML = "25"
+  } else if (allDice[1].innerHTML === allDice[3].innerHTML && allDice[0].innerHTML === allDice[2].innerHTML && allDice[0].innerHTML === allDice[4].innerHTML && allDice[0].innerHTML !== allDice[1].innerHTML) {
+    fullHouse.innerHTML = "25"
+  } else if (allDice[1].innerHTML === allDice[4].innerHTML && allDice[0].innerHTML === allDice[2].innerHTML && allDice[0].innerHTML === allDice[3].innerHTML && allDice[0].innerHTML !== allDice[1].innerHTML) {
+    fullHouse.innerHTML = "25"
+  } else if (allDice[2].innerHTML === allDice[3].innerHTML && allDice[0].innerHTML === allDice[1].innerHTML && allDice[0].innerHTML === allDice[4].innerHTML && allDice[0].innerHTML !== allDice[2].innerHTML) {
+    fullHouse.innerHTML = "25"
+  } else if (allDice[2].innerHTML === allDice[4].innerHTML && allDice[0].innerHTML === allDice[1].innerHTML && allDice[0].innerHTML === allDice[3].innerHTML && allDice[0].innerHTML !== allDice[2].innerHTML) {
+    fullHouse.innerHTML = "25"
+  } else if (allDice[3].innerHTML === allDice[4].innerHTML && allDice[0].innerHTML === allDice[1].innerHTML && allDice[0].innerHTML === allDice[2].innerHTML && allDice[0].innerHTML !== allDice[3].innerHTML) {
+    fullHouse.innerHTML = "25"
+  } else {
+    fullHouse.innerHTML = "0"
+  }
 })
 
 scoreButtons[9].addEventListener("click", () => {
