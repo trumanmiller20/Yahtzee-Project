@@ -30,111 +30,112 @@ let holdFive = false
 // Assign inital value to the roll number
 let rollNumber = 0
 
+// Roll dice function to randomize non-held dice
 const rollDice = () => {
-  if (holdOne = true) {
+  if (holdOne === true && holdTwo === false && holdThree === false && holdFour === false && holdFive === false) {
     allDice[1].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[2].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[3].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[4].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
-  } else if (holdTwo = true) {
+  } else if (holdTwo === true && holdOne === false && holdThree === false && holdFour === false && holdFive === false) {
     allDice[0].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[2].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[3].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[4].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
-  } else if (holdThree = true) {
+  } else if (holdThree === true && holdTwo === false && holdOne === false && holdFour === false && holdFive === false) {
     allDice[0].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[1].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[3].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[4].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
-  } else if (holdFour = true) {
+  } else if (holdFour === true && holdTwo === false && holdThree === false && holdOne === false && holdFive === false) {
     allDice[0].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[1].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[2].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[4].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
-  } else if (holdFive = true) {
+  } else if (holdFive === true && holdTwo === false && holdThree === false && holdFour === false && holdOne === false) {
     allDice[0].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[1].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[2].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[3].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
-  } else if (holdOne === true && holdTwo === true) {
+  } else if (holdOne === true && holdTwo === true && holdThree === false && holdFour === false && holdFive === false) {
     allDice[2].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[3].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[4].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
-  } else if (holdOne === true && holdThree === true) {
+  } else if (holdOne === true && holdThree === true && holdTwo === false && holdFour === false && holdFive === false) {
     allDice[1].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[3].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[4].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
-  } else if (holdOne === true && holdFour === true) {
+  } else if (holdOne === true && holdFour === true && holdTwo === false && holdThree === false && holdFive === false) {
     allDice[1].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[2].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[4].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
-  } else if (holdOne === true && holdFive === true) {
+  } else if (holdOne === true && holdFive === true && holdTwo === false && holdThree === false && holdFour === false) {
     allDice[1].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[2].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[3].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
-  } else if (holdTwo === true && holdThree === true) {
+  } else if (holdTwo === true && holdThree === true && holdOne === false && holdFour === false && holdFive === false) {
     allDice[0].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[3].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[4].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
-  } else if (holdTwo === true && holdFour === true) {
+  } else if (holdTwo === true && holdFour === true && holdOne === false && holdThree === false && holdFive === false) {
     allDice[0].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[2].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[4].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
-  } else if (holdTwo === true && holdFive === true) {
+  } else if (holdTwo === true && holdFive === true && holdOne === false && holdThree === false && holdFour === false) {
     allDice[0].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[2].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[3].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
-  } else if (holdThree === true && holdFour === true) {
+  } else if (holdThree === true && holdFour === true && holdOne === false && holdFour === false && holdFive === false) {
     allDice[0].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[1].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[4].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
-  } else if (holdThree === true && holdFive === true) {
+  } else if (holdThree === true && holdFive === true && holdOne === false && holdTwo === false && holdFour === false) {
     allDice[0].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[1].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[3].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
-  } else if (holdFour === true && holdFive === true) {
+  } else if (holdFour === true && holdFive === true && holdOne === false && holdTwo === false && holdThree === false) {
     allDice[0].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[1].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[2].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
-  } else if (holdOne === true && holdTwo === true && holdThree === true) {
+  } else if (holdOne === true && holdTwo === true && holdThree === true && holdFour === false && holdFive === false) {
     allDice[3].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[4].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
-  } else if (holdOne === true && holdTwo === true && holdFour === true) {
+  } else if (holdOne === true && holdTwo === true && holdFour === true && holdThree === false && holdFive === false) {
     allDice[2].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[4].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
-  } else if (holdOne === true && holdTwo === true && holdFive === true) {
+  } else if (holdOne === true && holdTwo === true && holdFive === true && holdThree === false && holdFour === false) {
     allDice[2].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[3].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
-  } else if (holdTwo === true && holdThree === true && holdFour === true) {
+  } else if (holdTwo === true && holdThree === true && holdFour === true && holdOne === false && holdFive === false) {
     allDice[0].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[4].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
-  } else if (holdTwo === true && holdThree === true && holdFive === true) {
+  } else if (holdTwo === true && holdThree === true && holdFive === true && holdOne === false && holdFour === false) {
     allDice[0].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[3].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
-  } else if (holdThree === true && holdFour === true && holdFive === true) {
+  } else if (holdThree === true && holdFour === true && holdFive === true && holdOne === false && holdTwo === false) {
     allDice[0].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[1].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
-  } else if (holdOne === true && holdFour === true && holdFive === true) {
+  } else if (holdOne === true && holdFour === true && holdFive === true && holdTwo === false && holdThree === false) {
     allDice[1].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[2].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
-  } else if (holdTwo === true && holdFour === true && holdFive === true) {
+  } else if (holdTwo === true && holdFour === true && holdFive === true && holdOne === false && holdThree === false) {
     allDice[0].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[2].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
-  } else if (holdOne === true && holdThree === true && holdFive === true) {
+  } else if (holdOne === true && holdThree === true && holdFive === true && holdTwo === false && holdFour === false) {
     allDice[1].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[3].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
-  } else if (holdOne === true && holdThree === true && holdFour === true) {
+  } else if (holdOne === true && holdThree === true && holdFour === true && holdTwo === false && holdFive === false) {
     allDice[1].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[4].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
-  } else if (holdOne === true && holdTwo === true && holdThree === true && holdFour === true) {
+  } else if (holdOne === true && holdTwo === true && holdThree === true && holdFour === true && holdFive === false) {
     allDice[4].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
-  } else if (holdTwo === true && holdThree === true && holdFour === true && holdFive === true) {
+  } else if (holdTwo === true && holdThree === true && holdFour === true && holdFive === true && holdOne === false) {
     allDice[0].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
-  } else if (holdOne === true && holdThree === true && holdFour === true && holdFive === true) {
+  } else if (holdOne === true && holdThree === true && holdFour === true && holdFive === true && holdTwo === false) {
     allDice[1].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
-  } else if (holdOne === true && holdTwo === true && holdFour === true && holdFive === true) {
+  } else if (holdOne === true && holdTwo === true && holdFour === true && holdFive === true && holdThree === false) {
     allDice[2].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
-  } else if (holdOne === true && holdTwo === true && holdThree === true && holdFive === true) {
+  } else if (holdOne === true && holdTwo === true && holdThree === true && holdFive === true && holdFour === false) {
     allDice[3].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
   } else if (holdOne === true && holdTwo === true && holdThree === true && holdFour === true && holdFive === true) {
     allDice[0].innerHTML = allDice[0].innerHTML
@@ -152,11 +153,6 @@ const rollDice = () => {
   }
 }
 
-  // dieOption[0].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
-  // dieOption[1].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
-  // dieOption[2].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
-  // dieOption[3].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
-  // dieOption[4].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
 
 // Add event listener to each button
 scoreButtons[0].addEventListener("click", () =>{})
@@ -176,19 +172,19 @@ holdButtons[0].addEventListener("click", () => {
     holdOne = !holdOne
   })
 holdButtons[1].addEventListener("click", () => {
-  holdTwo = !holdTwo
+    holdTwo = !holdTwo
 })
 holdButtons[2].addEventListener("click", () => {
-  holdThree = !holdThree
+    holdThree = !holdThree
 })
 holdButtons[3].addEventListener("click", () => {
-  holdFour = !holdFour
+    holdFour = !holdFour
 })
 holdButtons[4].addEventListener("click", () => {
-  holdFive = !holdFive
+    holdFive = !holdFive
 })
 rollButton.addEventListener("click", () => {
   rollDice()
 })
-console.log(rollButton)
+
 // resetGame.addEventListener("click", () =>{})
