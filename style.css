@@ -1,23 +1,83 @@
 .container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  
 }
+
+.aces-score {
+  display: flex;
+}
+
+.twos-score {
+  display: flex;
+}
+
+.threes-score {
+  display: flex;
+}
+
+.fours-score {
+  display: flex;
+}
+
+.fives-score {
+  display: flex;
+}
+
+.sixes-score {
+  display: flex;
+}
+
+.upper-score {
+  display: flex;
+}
+
+.three-kind-score {
+  display: flex;
+}
+
+.four-kind-score {
+  display: flex;
+}
+
+.full-house-score {
+  display: flex;
+}
+
+.sm-straight-score {
+  display: flex;
+}
+
+.lg-straight-score {
+  display: flex;
+}
+
+.chance-score {
+  display: flex;
+}
+
+.yahtzee-score {
+  display: flex;
+}
+
+.bonus-score {
+  display: flex;
+}
+
+.lower-score {
+  display: flex;
+}
+
+.grand-total-score {
+  display: flex;
+}
+
 
 .scorecard {
   display: flex;
   flex-direction: column;
 }
 
-.upper {
-  display: flex;
-  flex-direction: column;
-}
-
-.lower {
-  display: flex;
-  flex-direction: column;
-}
 
 .gameboard {
 }

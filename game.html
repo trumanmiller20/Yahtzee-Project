@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="style.css" />
+  <script defer src="script.js"></script>
   <title>Document</title>
 </head>
 <body>
@@ -16,65 +17,93 @@
   <div class = "container">
     <section class = "scorecard">
 
-      <div class = "upper">UPPER SECTION
+      <div class = "aces-score">
         <button id = "aces">ACES</button>
+        <div id = "aces-score">0</div>
+      </div>
+      <div class = "twos-score">
         <button id = "twos">TWOS</button>
+        <div id = "twos-score">0</div>
+      </div>
+      <div class = "threes-score">
         <button id = "threes">THREES</button>
+        <div id = "threes-score">0</div>
+      </div>
+      <div class = "fours-score">
         <button id = "fours">FOURS</button>
+        <div id = "fours-score">0</div>
+      </div>
+      <div class = "fives-score">
         <button id = "fives">FIVES</button>
+        <div id = "fives-score">0</div>
+      </div>
+      <div class = "sixes-score">
         <button id = "sixes">SIXES</button>
+        <div id = "sixes-score">0</div>
       </div>
-      <div class = "upper-total">UPPER TOTAL</div>
-      <div class = "lower">LOWER SECTION
+      <div class = "upper-score">
+        <h3>UPPER TOTAL</h3>
+        <div id = "upper-score">0</div>
+      </div>
+      <div class = "three-kind-score">
         <button id = "three-kind">3 OF A KIND</button>
-        <button id = "four-kind">4 OF A KIND</button>
-        <button id = "full-house">FULL HOUSE</button>
-        <button id = "sm-straight">SM. STRAIGHT</button>
-        <button id = "lg-straight">LG. STRAIGHT</button>
-        <button id = "chance">CHANCE</button>
-        <button id = "yahtzee">YAHTZEE</button>
-        <button id = "bonus">BONUS</button>
+        <div id = "three-kind-score">0</div>
       </div>
-      <div class = "lower-total">LOWER TOTAL</div>
-      <div class = "grand-total">GRAND TOTAL</div>
-
-    </section>
-
-    <section class = "each-score">
-      <div></div>
-      <div class = "aces-score">0</div>
-      <div class = "twos-score">0</div>
-      <div class = "threes-score">0</div>
-      <div class = "fours-score">0</div>
-      <div class = "fives-score">0</div>
-      <div class = "sixes-score">0</div>
-      <div class = "upper-score">0</div>
-      <div></div>
-      <div class = "three-kind-score">0</div>
-      <div class = "four-kind-score">0</div>
-      <div class = "full-house-score">0</div>
-      <div class = "sm-straight-score">0</div>
-      <div class = "lg-straight-score">0</div>
-      <div class = "chance-score">0</div>
-      <div class = "yahtzee-score">0</div>
-      <div class = "bonus-score">0</div>
-      <div class = "lower-score">0</div>
-      <div class = "grand-total-score">0</div>
+      <div class = "four-kind-score">
+        <button id = "four-kind">4 OF A KIND</button>
+        <div id = "four-kind-score">0</div>
+      </div>
+      <div class = "full-house-score">
+        <button id = "full-house">FULL HOUSE</button>
+        <div id = "full-house-score">0</div>
+      </div>
+      <div class = "sm-straight-score">
+        <button id = "sm-straight">SM. STRAIGHT</button>
+        <div id = "sm-straight-score">0</div>
+      </div>
+      <div class = "lg-straight-score">
+        <button id = "lg-straight">LG. STRAIGHT</button>
+        <div id = "lg-straight-score">0</div>
+      </div>
+      <div class = "chance-score">
+        <button id = "chance">CHANCE</button>
+        <div id = "chance-score">0</div>
+      </div>
+      <div class = "yahtzee-score">
+        <button id = "yahtzee">YAHTZEE</button>
+        <div id = "yahtzee-score">0</div>
+      </div>
+      <div class = "bonus-score">
+        <button id = "bonus">BONUS</button>
+        <div id = "bonus-score">0</div>
+      </div>
+      <div class = "lower-score">
+        <h3>LOWER SCORE</h3>
+        <div id = "lower-score">0</div>
+      </div>
+      <div class = "grand-total-score">
+        <h3>GRAND TOTAL</h3>
+        <div id = "grand-total-score">0</div>
+      </div>
 
     </section>
 
     <section class = "gameboard">
 
+
       <div class = "one">1</div>
-        <button id = "die-one">KEEP</button>
+        <button id = "die-one">HOLD</button>
       <div class = "two">2</div>
-        <button id = "die-one">KEEP</button>
+        <button id = "die-one">HOLD</button>
       <div class = "three">3</div>
-        <button id = "die-one">KEEP</button>
+        <button id = "die-one">HOLD</button>
       <div class = "four">4</div>
-        <button id = "die-one">KEEP</button>
+        <button id = "die-one">HOLD</button>
       <div class = "five">5</div>
-        <button id = "die-one">KEEP</button>
+        <button id = "die-one">HOLD</button>
+      <div class = "roll-dice">
+        <button id = "roll">ROLL DICE</button>
+      </div>
 
     </section>
   </div>
