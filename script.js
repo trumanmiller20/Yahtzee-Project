@@ -137,13 +137,19 @@ const largeStraight = () => {
   }
 }
 
+let multYahtzee = () => {
+  let yahtcount = 0
+  yahtcount += parseInt(yahtzee.innerHTML)
+  yahtzee.innerHTML = yahtcount.toString()
+}
+
 // Disable all hold and score buttons on site load
 disableScoring()
 disableHold()
 
 // Function to establish allotted rolls (3), and determine when scoring and holding are enabled based on roll value
 let rollNumber = () => {
-  if (roll === 25) {
+  if (roll === 250) {
     rollButton.disabled = true
     disableHold()
   } else {
@@ -780,8 +786,12 @@ scoreButtons[11].addEventListener("click", () => {
 })
 
 scoreButtons[12].addEventListener("click", () => {
-  
-  // scoreButtons[12].disabled = true
+  if (allDice[0].innerHTML === allDice[1].innerHTML && allDice[2].innerHTML === allDice[0].innerHTML && allDice[3].innerHTML === allDice[0].innerHTML && allDice[4].innerHTML === allDice[0].innerHTML) {
+    multYahtzee()
+  } else {
+    scoreButtons[12].disabled = true
+    yahtzee.innerHTML = "0"
+  }
 })
 
 // Assign hold button event listeners to toggle the boolean value onclick
