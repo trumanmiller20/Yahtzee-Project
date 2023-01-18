@@ -77,10 +77,9 @@ let round = 0
 let rollNumber = () => {
   if (roll === 2) {
     disableHold()
-    removeAllHold()
     rollButton.disabled = true
   } else {
-    roll ++
+    roll++
     enableHold()
     enableScoring()
   }
@@ -117,18 +116,12 @@ const enableScoring = () => {
   }
 }
 
-// const enableScoringEach = () => {
-//   scoreButtons.forEach((button) => {
-//     button.disabled = false
-//   })
-// }
-
-// Function to enable all score buttons
-
 const removeAllHold = () => {
-  holdButtons.forEach((button) => {
-    button.value = false
-  })
+  holdOne = false
+  holdTwo = false
+  holdThree = false
+  holdFour = false
+  holdFive = false
 }
 
 const disableHold = () => {
@@ -204,7 +197,18 @@ const largeStraight = () => {
   }
 }
 
-
+// Reset game function
+const resetGame = () => {
+  for (let i = 0; i < scoredArr.length; i++) {
+    scoredArr[i] = 0
+  }
+  scoreSections.forEach((section) => {
+    section.innerHTML = "0"
+  })
+  removeAllHold()
+  // disableScoringAll()
+  disableHold()
+}
 
 // Disable all hold and score buttons on site load
 disableScoringAll()
@@ -324,7 +328,6 @@ const rollDice = () => {
     allDice[2].innerHTML = allDice[2].innerHTML
     allDice[3].innerHTML = allDice[3].innerHTML
     allDice[4].innerHTML = allDice[4].innerHTML
-    alert("Are you sure you want to use a roll while holding all dice?")
   } else {
     allDice[0].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
     allDice[1].innerHTML = Math.floor(Math.random() * dieOptions.length) + 1
@@ -338,6 +341,7 @@ const rollDice = () => {
 
 scoreButtons[0].addEventListener("click", () => {
   disableScoringAll()
+  removeAllHold()
   scoredArr[0] = 1
   roll = 0
   rollButton.disabled = false
@@ -416,6 +420,7 @@ scoreButtons[0].addEventListener("click", () => {
 
 scoreButtons[1].addEventListener("click", () => {
   scoreButtons[1].disabled = true
+  removeAllHold()
   scoredArr[1] = 1
   roll = 0
   rollButton.disabled = false
@@ -494,6 +499,7 @@ scoreButtons[1].addEventListener("click", () => {
 
 scoreButtons[2].addEventListener("click", () => {
   scoreButtons[2].disabled = true
+  removeAllHold()
   scoredArr[2] = 1
   roll = 0
   rollButton.disabled = false
@@ -572,6 +578,7 @@ scoreButtons[2].addEventListener("click", () => {
 
 scoreButtons[3].addEventListener("click", () => {
   scoreButtons[3].disabled = true
+  removeAllHold()
   scoredArr[3] = 1
   roll = 0
   rollButton.disabled = false
@@ -650,6 +657,7 @@ scoreButtons[3].addEventListener("click", () => {
 
 scoreButtons[4].addEventListener("click", () => {
   scoreButtons[4].disabled = true
+  removeAllHold()
   scoredArr[4] = 1
   roll = 0
   rollButton.disabled = false
@@ -728,6 +736,7 @@ scoreButtons[4].addEventListener("click", () => {
 
 scoreButtons[5].addEventListener("click", () => {
   scoreButtons[5].disabled = true
+  removeAllHold()
   scoredArr[5] = 1
   roll = 0
   rollButton.disabled = false
@@ -806,6 +815,7 @@ scoreButtons[5].addEventListener("click", () => {
 
 scoreButtons[6].addEventListener("click", () => {
   scoreButtons[6].disabled = true
+  removeAllHold()
   scoredArr[6] = 1
   roll = 0
   rollButton.disabled = false
@@ -841,6 +851,7 @@ scoreButtons[6].addEventListener("click", () => {
 
 scoreButtons[7].addEventListener("click", () => {
   scoreButtons[7].disabled = true
+  removeAllHold()
   scoredArr[7] = 1
   roll = 0
   rollButton.disabled = false
@@ -866,6 +877,7 @@ scoreButtons[7].addEventListener("click", () => {
 
 scoreButtons[8].addEventListener("click", () => {
   scoreButtons[8].disabled = true
+  removeAllHold()
   scoredArr[8] = 1
   roll = 0
   rollButton.disabled = false
@@ -901,6 +913,7 @@ scoreButtons[8].addEventListener("click", () => {
 
 scoreButtons[9].addEventListener("click", () => {
   scoreButtons[9].disabled = true
+  removeAllHold()
   scoredArr[9] = 1
   roll = 0
   rollButton.disabled = false
@@ -914,6 +927,7 @@ scoreButtons[9].addEventListener("click", () => {
 
 scoreButtons[10].addEventListener("click", () => {
   scoreButtons[10].disabled = true
+  removeAllHold()
   scoredArr[10] = 1
   roll = 0
   rollButton.disabled = false
@@ -927,6 +941,7 @@ scoreButtons[10].addEventListener("click", () => {
 
 scoreButtons[11].addEventListener("click", () => {
   scoreButtons[11].disabled = true
+  removeAllHold()
   scoredArr[11] = 1
   roll = 0
   rollButton.disabled = false
@@ -955,7 +970,7 @@ scoreButtons[12].addEventListener("click", () => {
   roll = 0
   disableScoringAll()
   rollButton.disabled = false
-  // currentRound()
+  removeAllHold()
 })
 
 // Assign hold button event listeners to toggle the boolean value onclick
@@ -979,4 +994,6 @@ rollButton.addEventListener("click", () => {
   rollNumber()
 })
 
-// resetGame.addEventListener("click", () =>{})
+resetButton.addEventListener("click", () => {
+  resetGame()
+})
