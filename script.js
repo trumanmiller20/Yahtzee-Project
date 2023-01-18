@@ -20,6 +20,13 @@ const rollButton = document.querySelector("#roll")
 
 const resetButton = document.querySelector("#reset-game")
 
+// Apply initial section totals and create function to update grand total
+let upperScore = 0
+
+let lowerScore = 0
+
+let bonusScore = 0
+
 // Assign each score block to DOM for use in game logic
 let aces = scoreSections[0]
 let twos = scoreSections[1]
@@ -39,6 +46,9 @@ let lower = scoreSections[14]
 let bonus = scoreSections[15]
 let grandTotal = scoreSections[16]
 
+let scoredArr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+
 // Assign boolean to hold buttons
 let holdOne = false
 let holdTwo = false
@@ -46,34 +56,81 @@ let holdThree = false
 let holdFour = false
 let holdFive = false
 
-// Assign inital value to the roll number and disable all scoring options
+// Assign inital value to the roll number
 let roll = 0
 
-// Function to add all dice values and pass total converted to string to the chance score block
-const addDice = () => {
-  let diceTotal = 0
-  allDice.forEach((die) => {
-    diceTotal += parseInt(die.innerText)
-  })
-  stringTotal = diceTotal.toString()
-  chance.innerHTML = stringTotal
+// Assign initial value to current round
+let round = 0
+
+// let currentRound = () => {
+//   if (round === 12) {
+//     rollButton.disabled = true
+//     alert("GAME OVER!")
+//   } else {
+//     rollButton.disabled = false
+//     round++
+//     roll = 0
+//   }
+// }
+
+// Function to establish allotted rolls (3), and determine when scoring and holding are enabled based on roll value
+let rollNumber = () => {
+  if (roll === 2) {
+    disableHold()
+    removeAllHold()
+    rollButton.disabled = true
+  } else {
+    roll ++
+    enableHold()
+    enableScoring()
+  }
+}
+
+// Function to update grand total based on upper/lower/bonus totals
+let totalScore = () => {
+  let totalSections = parseInt(upperScore) + parseInt(lowerScore) + parseInt(bonus.innerHTML)
+  grandTotal.innerHTML = totalSections.toString()
+}
+
+// Function to determine if bonus applicable and update bonus total accordingly
+let bonusTotal = () => {
+  if (parseInt(upper.innerHTML) >= 63) {
+    bonus.innerHTML = "35"
+  } else {
+    bonus.innerHTML = "0"
+  }
 }
 
 // Function to disable all score buttons
-const disableScoring = () => {
+const disableScoringAll = () => {
   scoreButtons.forEach((button) => {
-  button.disabled = true
-})
+    button.disabled = true
+  })
 }
 
 // Function to enable all score buttons
 const enableScoring = () => {
-  scoreButtons.forEach((button) => {
-  button.disabled = false
-})
+  for (let i = 0; i < scoredArr.length; i++) {
+    if (scoredArr[i] === 0) {
+      scoreButtons[i].disabled = false
+    }
+  }
 }
 
+// const enableScoringEach = () => {
+//   scoreButtons.forEach((button) => {
+//     button.disabled = false
+//   })
+// }
+
 // Function to enable all score buttons
+
+const removeAllHold = () => {
+  holdButtons.forEach((button) => {
+    button.value = false
+  })
+}
+
 const disableHold = () => {
   holdButtons.forEach((button) => {
   button.disabled = true
@@ -94,6 +151,16 @@ const kindTotal = () => {
     kind += parseInt(die.innerText)
   })
   return kind
+}
+
+// Function to add all dice values and pass total converted to string to the chance score block
+const addDice = () => {
+  let diceTotal = 0
+  allDice.forEach((die) => {
+    diceTotal += parseInt(die.innerText)
+  })
+  stringTotal = diceTotal.toString()
+  chance.innerHTML = stringTotal
 }
 
 // Functions to simplify smStraight/lgStraight scoring logic
@@ -137,27 +204,11 @@ const largeStraight = () => {
   }
 }
 
-let multYahtzee = () => {
-  let yahtcount = 0
-  yahtcount += parseInt(yahtzee.innerHTML)
-  yahtzee.innerHTML = yahtcount.toString()
-}
+
 
 // Disable all hold and score buttons on site load
-disableScoring()
+disableScoringAll()
 disableHold()
-
-// Function to establish allotted rolls (3), and determine when scoring and holding are enabled based on roll value
-let rollNumber = () => {
-  if (roll === 250) {
-    rollButton.disabled = true
-    disableHold()
-  } else {
-    roll ++
-    enableScoring()
-    enableHold()
-    }
-  }
 
 
 // Roll dice function to randomize non-held dice
@@ -286,7 +337,10 @@ const rollDice = () => {
 // Add event listener to each score button which initiates nested functions, thereby populating scoring blocks with correct values
 
 scoreButtons[0].addEventListener("click", () => {
-  scoreButtons[0].disabled = true
+  disableScoringAll()
+  scoredArr[0] = 1
+  roll = 0
+  rollButton.disabled = false
   if (allDice[0].innerHTML === "1" && allDice[1].innerHTML !== "1" && allDice[2].innerHTML !== "1" && allDice[3].innerHTML !== "1" & allDice[4].innerHTML !== "1") {
     aces.innerHTML = "1"
   } else if (allDice[1].innerHTML === "1" && allDice[0].innerHTML !== "1" && allDice[2].innerHTML !== "1" && allDice[3].innerHTML !== "1" & allDice[4].innerHTML !== "1") {
@@ -351,11 +405,21 @@ scoreButtons[0].addEventListener("click", () => {
     aces.innerHTML = "5"
   } else {
     aces.innerHTML = "0"
-  }                  
+  }
+  upperScore += parseInt(aces.innerHTML)
+  upper.innerHTML = upperScore.toString()
+  bonusTotal()
+  totalScore()
+  // currentRound()
+
 })
 
 scoreButtons[1].addEventListener("click", () => {
   scoreButtons[1].disabled = true
+  scoredArr[1] = 1
+  roll = 0
+  rollButton.disabled = false
+  disableScoringAll()
   if (allDice[0].innerHTML === "2" && allDice[1].innerHTML !== "2" && allDice[2].innerHTML !== "2" && allDice[3].innerHTML !== "2" & allDice[4].innerHTML !== "2") {
     twos.innerHTML = "2"
   } else if (allDice[1].innerHTML === "2" && allDice[0].innerHTML !== "2" && allDice[2].innerHTML !== "2" && allDice[3].innerHTML !== "2" & allDice[4].innerHTML !== "2") {
@@ -420,11 +484,20 @@ scoreButtons[1].addEventListener("click", () => {
     twos.innerHTML = "10"
   } else {
     twos.innerHTML = "0"
-  }     
+  }
+  upperScore += parseInt(twos.innerHTML)
+  upper.innerHTML = upperScore.toString()
+  bonusTotal()
+  totalScore()
+  // currentRound()
 })
 
 scoreButtons[2].addEventListener("click", () => {
   scoreButtons[2].disabled = true
+  scoredArr[2] = 1
+  roll = 0
+  rollButton.disabled = false
+  disableScoringAll()
     if (allDice[0].innerHTML === "3" && allDice[1].innerHTML !== "3" && allDice[2].innerHTML !== "3" && allDice[3].innerHTML !== "3" & allDice[4].innerHTML !== "3") {
     threes.innerHTML = "3"
   } else if (allDice[1].innerHTML === "3" && allDice[0].innerHTML !== "3" && allDice[2].innerHTML !== "3" && allDice[3].innerHTML !== "3" & allDice[4].innerHTML !== "3") {
@@ -490,10 +563,19 @@ scoreButtons[2].addEventListener("click", () => {
   } else {
     threes.innerHTML = "0"
   }
+  upperScore += parseInt(threes.innerHTML)
+  upper.innerHTML = upperScore.toString()
+  bonusTotal()
+  totalScore()
+  // currentRound()
 })
 
 scoreButtons[3].addEventListener("click", () => {
   scoreButtons[3].disabled = true
+  scoredArr[3] = 1
+  roll = 0
+  rollButton.disabled = false
+  disableScoringAll()
   if (allDice[0].innerHTML === "4" && allDice[1].innerHTML !== "4" && allDice[2].innerHTML !== "4" && allDice[3].innerHTML !== "4" & allDice[4].innerHTML !== "4") {
     fours.innerHTML = "4"
   } else if (allDice[1].innerHTML === "4" && allDice[0].innerHTML !== "4" && allDice[2].innerHTML !== "4" && allDice[3].innerHTML !== "4" & allDice[4].innerHTML !== "4") {
@@ -554,15 +636,24 @@ scoreButtons[3].addEventListener("click", () => {
     fours.innerHTML = "16"
   } else if (allDice[0].innerHTML === "4" && allDice[1].innerHTML === "4" && allDice[2].innerHTML === "4" && allDice[4].innerHTML === "4" & allDice[3].innerHTML !== "4") {
     fours.innerHTML = "16"
-  } else if (allDice[0].innerHTML === "4" && allDice[1].innerHTML === "4" && allDice[2].innerHTML === "4" && allDice[3].innerHTML === "4" & allDice[4].innerHTML === "3") {
+  } else if (allDice[0].innerHTML === "4" && allDice[1].innerHTML === "4" && allDice[2].innerHTML === "4" && allDice[3].innerHTML === "4" & allDice[4].innerHTML === "4") {
     fours.innerHTML = "20"
   } else {
     fours.innerHTML = "0"
   }
+  upperScore += parseInt(fours.innerHTML)
+  upper.innerHTML = upperScore.toString()
+  bonusTotal()
+  totalScore()
+  // currentRound()
 })
 
 scoreButtons[4].addEventListener("click", () => {
   scoreButtons[4].disabled = true
+  scoredArr[4] = 1
+  roll = 0
+  rollButton.disabled = false
+  disableScoringAll()
   if (allDice[0].innerHTML === "5" && allDice[1].innerHTML !== "5" && allDice[2].innerHTML !== "5" && allDice[3].innerHTML !== "5" & allDice[4].innerHTML !== "5") {
     fives.innerHTML = "5"
   } else if (allDice[1].innerHTML === "5" && allDice[0].innerHTML !== "5" && allDice[2].innerHTML !== "5" && allDice[3].innerHTML !== "5" & allDice[4].innerHTML !== "5") {
@@ -628,10 +719,19 @@ scoreButtons[4].addEventListener("click", () => {
   } else {
     fives.innerHTML = "0"
   }
+  upperScore += parseInt(fives.innerHTML)
+  upper.innerHTML = upperScore.toString()
+  bonusTotal()
+  totalScore()
+  // currentRound()
 })
 
 scoreButtons[5].addEventListener("click", () => {
   scoreButtons[5].disabled = true
+  scoredArr[5] = 1
+  roll = 0
+  rollButton.disabled = false
+  disableScoringAll()
   if (allDice[0].innerHTML === "6" && allDice[1].innerHTML !== "6" && allDice[2].innerHTML !== "6" && allDice[3].innerHTML !== "6" & allDice[4].innerHTML !== "6") {
     sixes.innerHTML = "6"
   } else if (allDice[1].innerHTML === "6" && allDice[0].innerHTML !== "6" && allDice[2].innerHTML !== "6" && allDice[3].innerHTML !== "6" & allDice[4].innerHTML !== "6") {
@@ -697,10 +797,19 @@ scoreButtons[5].addEventListener("click", () => {
   } else {
     sixes.innerHTML = "0"
   }
+  upperScore += parseInt(sixes.innerHTML)
+  upper.innerHTML = upperScore.toString()
+  bonusTotal()
+  totalScore()
+  // currentRound()
 })
 
 scoreButtons[6].addEventListener("click", () => {
   scoreButtons[6].disabled = true
+  scoredArr[6] = 1
+  roll = 0
+  rollButton.disabled = false
+  disableScoringAll()
   if (allDice[0].innerHTML === allDice[1].innerHTML && allDice[0].innerHTML === allDice[2].innerHTML && allDice[3].innerHTML !== allDice[0] && allDice[4] !== allDice[0].innerHTML) {
     threeKind.innerHTML = kindTotal().toString()
   } else if (allDice[0].innerHTML === allDice[1].innerHTML && allDice[3].innerHTML === allDice[0].innerHTML && allDice[2].innerHTML !== allDice[0].innerHTML && allDice[4].innerHTML !== allDice[0].innerHTML) {
@@ -724,10 +833,18 @@ scoreButtons[6].addEventListener("click", () => {
   } else {
     threeKind.innerHTML = "0"
   }
+  lowerScore += parseInt(threeKind.innerHTML)
+  lower.innerHTML = lowerScore.toString()
+  totalScore()
+  // currentRound()
 })
 
 scoreButtons[7].addEventListener("click", () => {
   scoreButtons[7].disabled = true
+  scoredArr[7] = 1
+  roll = 0
+  rollButton.disabled = false
+  disableScoringAll()
   if (allDice[0].innerHTML === allDice[1].innerHTML && allDice[2].innerHTML === allDice[0].innerHTML && allDice[3].innerHTML === allDice[0].innerHTML && allDice[4].innerHTML !== allDice[0].innerHTML) {
     fourKind.innerHTML = kindTotal().toString()
   } else if (allDice[0].innerHTML === allDice[1].innerHTML && allDice[2].innerHTML === allDice[0].innerHTML && allDice[4].innerHTML === allDice[0].innerHTML && allDice[3].innerHTML !== allDice[0].innerHTML) {
@@ -741,10 +858,18 @@ scoreButtons[7].addEventListener("click", () => {
   } else {
     fourKind.innerHTML = "0"
   }
+  lowerScore += parseInt(fourKind.innerHTML)
+  lower.innerHTML = lowerScore.toString()
+  totalScore()
+  // currentRound()
 })
 
 scoreButtons[8].addEventListener("click", () => {
   scoreButtons[8].disabled = true
+  scoredArr[8] = 1
+  roll = 0
+  rollButton.disabled = false
+  disableScoringAll()
   if (allDice[0].innerHTML === allDice[1].innerHTML && allDice[2].innerHTML === allDice[3].innerHTML && allDice[2].innerHTML === allDice[4].innerHTML && allDice[2].innerHTML !== allDice[0].innerHTML) {
     fullHouse.innerHTML = "25"
   } else if (allDice[0].innerHTML === allDice[2].innerHTML && allDice[1].innerHTML === allDice[3].innerHTML && allDice[1].innerHTML === allDice[4].innerHTML && allDice[1].innerHTML !== allDice[0].innerHTML) {
@@ -768,30 +893,69 @@ scoreButtons[8].addEventListener("click", () => {
   } else {
     fullHouse.innerHTML = "0"
   }
+  lowerScore += parseInt(fullHouse.innerHTML)
+  lower.innerHTML = lowerScore.toString()
+  totalScore()
+  // currentRound()
 })
 
 scoreButtons[9].addEventListener("click", () => {
   scoreButtons[9].disabled = true
+  scoredArr[9] = 1
+  roll = 0
+  rollButton.disabled = false
+  disableScoringAll()
   smallStraight()
+  lowerScore += parseInt(smStraight.innerHTML)
+  lower.innerHTML = lowerScore.toString()
+  totalScore()
+  // currentRound()
 })
 
 scoreButtons[10].addEventListener("click", () => {
   scoreButtons[10].disabled = true
+  scoredArr[10] = 1
+  roll = 0
+  rollButton.disabled = false
+  disableScoringAll()
   largeStraight()
+  lowerScore += parseInt(lgStraight.innerHTML)
+  lower.innerHTML = lowerScore.toString()
+  totalScore()
+  // currentRound()
 })
 
 scoreButtons[11].addEventListener("click", () => {
   scoreButtons[11].disabled = true
+  scoredArr[11] = 1
+  roll = 0
+  rollButton.disabled = false
+  disableScoringAll()
   addDice()
+  lowerScore += parseInt(chance.innerHTML)
+  lower.innerHTML = lowerScore.toString()
+  totalScore()
+  // currentRound()
 })
 
 scoreButtons[12].addEventListener("click", () => {
-  if (allDice[0].innerHTML === allDice[1].innerHTML && allDice[2].innerHTML === allDice[0].innerHTML && allDice[3].innerHTML === allDice[0].innerHTML && allDice[4].innerHTML === allDice[0].innerHTML) {
-    multYahtzee()
+  if (allDice[0].innerHTML === allDice[1].innerHTML && allDice[2].innerHTML === allDice[0].innerHTML && allDice[3].innerHTML === allDice[0].innerHTML && allDice[4].innerHTML === allDice[0].innerHTML && yahtzee.innerHTML === "0") {
+    yahtzee.innerHTML = "50"
+  } else if (allDice[0].innerHTML === allDice[1].innerHTML && allDice[2].innerHTML === allDice[0].innerHTML && allDice[3].innerHTML === allDice[0].innerHTML && allDice[4].innerHTML === allDice[0].innerHTML && (parseInt(yahtzee.innerHTML) % 50 === 0)) {
+    let multYaht = parseInt(yahtzee.innerHTML)
+     multYaht += 50
+    yahtzee.innerHTML = multYaht.toString()
   } else {
     scoreButtons[12].disabled = true
-    yahtzee.innerHTML = "0"
+    scoredArr[12] = 1
   }
+  lowerScore += parseInt(yahtzee.innerHTML)
+  lower.innerHTML = lowerScore.toString()
+  totalScore()
+  roll = 0
+  disableScoringAll()
+  rollButton.disabled = false
+  // currentRound()
 })
 
 // Assign hold button event listeners to toggle the boolean value onclick
