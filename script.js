@@ -49,6 +49,16 @@ let holdFive = false
 // Assign inital value to the roll number and disable all scoring options
 let roll = 0
 
+// Function to add all dice values and pass total converted to string to the chance score block
+const addDice = () => {
+  let diceTotal = 0
+  allDice.forEach((die) => {
+    diceTotal += parseInt(die.innerText)
+  })
+  stringTotal = diceTotal.toString()
+  chance.innerHTML = stringTotal
+}
+
 // Function to disable all score buttons
 const disableScoring = () => {
   scoreButtons.forEach((button) => {
@@ -83,8 +93,48 @@ const kindTotal = () => {
   allDice.forEach((die) => {
     kind += parseInt(die.innerText)
   })
-  console.log(kind)
   return kind
+}
+
+// Functions to simplify smStraight/lgStraight scoring logic
+// new Set only pulls values that do not repeat or are unique within the original array
+// Dice values are parsed to integers and sorted, then looped to adjust a counter which determines how lg/sm Straight will be scored
+const smallStraight = () => {
+  let diceValues = []
+  allDice.forEach((die) => {
+    diceValues.push(parseInt(die.innerText))
+  })
+  diceValues.sort()
+  let counter = 1
+  for (let i = 0; i < diceValues.length; i++) {
+    if (i > 0 && diceValues[i] === diceValues [i - 1] + 1) {
+      counter++
+    }
+  }
+  if (counter >= 4) {
+    smStraight.innerHTML = "30"
+  } else {
+    smStraight.innerHTML = "0"
+  }
+}
+
+const largeStraight = () => {
+  let diceValues = []
+  allDice.forEach((die) => {
+    diceValues.push(parseInt(die.innerText))
+  })
+  diceValues.sort()
+  let counter = 1
+  for (let i = 0; i < diceValues.length; i++) {
+    if (i > 0 && diceValues[i] === diceValues [i - 1] + 1) {
+      counter++
+    }
+  }
+  if (counter === 5) {
+    lgStraight.innerHTML = "40"
+  } else {
+    lgStraight.innerHTML = "0"
+  }
 }
 
 // Disable all hold and score buttons on site load
@@ -227,7 +277,7 @@ const rollDice = () => {
   }
 }
 
-// Add event listener to each score button and nested functions to allow for dynamic scoring
+// Add event listener to each score button which initiates nested functions, thereby populating scoring blocks with correct values
 
 scoreButtons[0].addEventListener("click", () => {
   scoreButtons[0].disabled = true
@@ -716,18 +766,22 @@ scoreButtons[8].addEventListener("click", () => {
 
 scoreButtons[9].addEventListener("click", () => {
   scoreButtons[9].disabled = true
+  smallStraight()
 })
 
 scoreButtons[10].addEventListener("click", () => {
   scoreButtons[10].disabled = true
+  largeStraight()
 })
 
 scoreButtons[11].addEventListener("click", () => {
   scoreButtons[11].disabled = true
+  addDice()
 })
 
 scoreButtons[12].addEventListener("click", () => {
-  scoreButtons[12].disabled = true
+  
+  // scoreButtons[12].disabled = true
 })
 
 // Assign hold button event listeners to toggle the boolean value onclick
