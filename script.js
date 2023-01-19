@@ -206,8 +206,12 @@ const resetGame = () => {
     section.innerHTML = "0"
   })
   removeAllHold()
-  // disableScoringAll()
   disableHold()
+  allDice[0].innerHTML = "1"
+  allDice[1].innerHTML = "2"
+  allDice[2].innerHTML = "3"
+  allDice[3].innerHTML = "4"
+  allDice[4].innerHTML = "5"
 }
 
 // Disable all hold and score buttons on site load
