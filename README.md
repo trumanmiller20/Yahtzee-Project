@@ -1,7 +1,7 @@
 
 ![Image](https://play-lh.googleusercontent.com/kLiKCprLfkZnaJ4fh3jevhE9TZJ8Nogngl1BgF8aBnxSnsp1sBvTKP6jfd8CykjMUVA)
 # **YAHTZEE**
-## Table of Contents:
+## ***Table of Contents:***
 1) Motivation
 2) Game Description
 3) Technologies Used
