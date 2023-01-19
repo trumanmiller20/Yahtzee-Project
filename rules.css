@@ -1,0 +1,47 @@
+@media (max-width: 500px) {
+  body {
+  background-image: url("https://w0.peakpx.com/wallpaper/772/703/HD-wallpaper-dice-red.jpg");
+  background-size: 100vw;
+  }
+}
+
+@media (min-width: 500px) {
+body {
+  background-image: url("http://trumpwallpapers.com/wp-content/uploads/Dice-Wallpaper-03-2560x1600-1.jpg");
+  background-size: cover;
+  }
+}
+
+.container {
+  background-color: rgba(26, 26, 26, 0.7);
+  border: 10px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5vw;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-family: "Coming Soon", cursive;
+  font-size: 8vh;
+  margin-top: 4vh;
+}
+
+a {
+  color:rgb(235, 132, 36);
+  margin: 10px;
+  text-decoration: none;
+  font-family: "Coming Soon", cursive;
+  font-size: 5vh;
+  
+}
+
+p {
+  color: white;
+  text-align: left;
+  font-family: "Coming Soon", cursive;
+  margin: 2vw;
+}
