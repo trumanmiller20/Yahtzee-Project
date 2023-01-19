@@ -46,6 +46,7 @@ a {
   margin: 0 0 3vh 0;
   color:rgb(235, 132, 36);
   text-decoration: none;
+  font-style: italic;
   font-family: "Coming Soon", cursive;
 }
 
@@ -73,6 +74,7 @@ a {
   text-align: center;
   font-size: 3vh;
   font-family: "Coming Soon", cursive;
+  color: white;
 }
 
 .aces-score {
@@ -196,6 +198,7 @@ h3 {
   flex-direction: column;
   justify-content: space-evenly;
   height: 100%;
+  width: 45%;
   font-family: "Coming Soon", cursive;
 }
 
@@ -216,6 +219,7 @@ h3 {
   flex-direction: column;
   justify-content: center;
   font-family: "Coming Soon", cursive;
+  color: rgb(235, 132, 36);
   font-size: 5vh;
 }
 
@@ -246,6 +250,7 @@ h3 {
   flex-direction: column;
   justify-content: flex-start;
   height: 95%;
+  width: 55%;
   align-items: center;
 }
 
