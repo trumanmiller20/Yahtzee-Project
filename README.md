@@ -2,12 +2,16 @@
 ![Image](https://play-lh.googleusercontent.com/kLiKCprLfkZnaJ4fh3jevhE9TZJ8Nogngl1BgF8aBnxSnsp1sBvTKP6jfd8CykjMUVA)
 # **YAHTZEE**
 ## Table of Contents:
-1) Game Description
-2) Technologies Used
-3) Credits
+1) Motivation
+2) Game Description
+3) Technologies Used
+4) Credits
+***
+### ***Motivation***
+I was motivated to create this simple Javascript Yahtzee by my nephew's love for the game.
 ***
 ### ***Description:*** 
-Yahtzee is a dice game based on Poker. The object of the game is to roll certain combinations of numbers with five dice. Each round the player has three opportunities to throw five dice, attempting to achieve a good combination of numbers with different combinations producing different scores. While luck plays a role in Yahtzee, strategy can make a significant difference.
+Yahtzee is a dice game based on Poker. Each round the player has three opportunities to roll five dice, utilizing strategy to determine which dice to hold, and which to re-roll. Different combinations produce different scoring options which, when selected, return a score value that is added to the player's "Grand Total". The game is over when all scoring options have been exhausted. While luck does plays a large role in Yahtzee, strategy can make a significant difference!
 ***
 ### ***Technologies Used***
 * HTML 
