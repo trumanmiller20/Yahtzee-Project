@@ -12,7 +12,7 @@ I was motivated to create this simple Javascript Yahtzee by my nephew's love for
 ***
 ### ***Description:*** 
 Yahtzee is a dice game based on Poker. Each round the player has three opportunities to roll five dice, utilizing strategy to determine which dice to hold, and which to re-roll. Different combinations produce different scoring options which, when selected, return a score value that is added to the player's "Grand Total". The game is over when all scoring options have been exhausted. While luck does plays a large role in Yahtzee, strategy can make a significant difference!
-[Link to Game](https://daily-card.surge.sh/game.html)
+[Link to Game](https://adorable-duck.surge.sh/game.html)
 ***
 ### ***Technologies Used***
 * HTML 

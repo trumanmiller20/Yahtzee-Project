@@ -962,7 +962,7 @@ scoreButtons[12].addEventListener("click", () => {
     yahtzee.innerHTML = "50"
   } else if (allDice[0].innerHTML === allDice[1].innerHTML && allDice[2].innerHTML === allDice[0].innerHTML && allDice[3].innerHTML === allDice[0].innerHTML && allDice[4].innerHTML === allDice[0].innerHTML && (parseInt(yahtzee.innerHTML) % 50 === 0)) {
     let multYaht = parseInt(yahtzee.innerHTML)
-     multYaht += 50
+     multYaht += 100
     yahtzee.innerHTML = multYaht.toString()
   } else {
     scoreButtons[12].disabled = true
