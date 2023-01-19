@@ -62,16 +62,6 @@ let roll = 0
 // Assign initial value to current round
 let round = 0
 
-// let currentRound = () => {
-//   if (round === 12) {
-//     rollButton.disabled = true
-//     alert("GAME OVER!")
-//   } else {
-//     rollButton.disabled = false
-//     round++
-//     roll = 0
-//   }
-// }
 
 // Function to establish allotted rolls (3), and determine when scoring and holding are enabled based on roll value
 let rollNumber = () => {
@@ -116,6 +106,7 @@ const enableScoring = () => {
   }
 }
 
+// Function to set hold booleans to false
 const removeAllHold = () => {
   holdOne = false
   holdTwo = false
@@ -124,6 +115,7 @@ const removeAllHold = () => {
   holdFive = false
 }
 
+// Function to disable all holds
 const disableHold = () => {
   holdButtons.forEach((button) => {
   button.disabled = true
@@ -212,6 +204,9 @@ const resetGame = () => {
   allDice[2].innerHTML = "3"
   allDice[3].innerHTML = "4"
   allDice[4].innerHTML = "5"
+  upperScore = 0
+  lowerScore = 0
+  bonusScore = 0
 }
 
 // Disable all hold and score buttons on site load
