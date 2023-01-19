@@ -37,6 +37,7 @@ h1 {
   color: white;
   font-family: "Coming Soon", cursive;
   font-size: 7vh;
+  font-weight: lighter;
   text-align: center;
   margin: 2vh;
 }
@@ -56,7 +57,7 @@ a {
   color: white;
   height: 80vh;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .score-button {
@@ -64,7 +65,6 @@ a {
   font-family: "Coming Soon", cursive;
   border-radius: 10px;
   border-color: gray;
-  background-color:white;
   font-weight: bold;
   color: black;
 }
@@ -190,6 +190,7 @@ h3 {
   margin: 0;
   font-size: 3vh;
   color:rgb(235, 132, 36);
+  font-weight: lighter;
 }
 
 
@@ -198,7 +199,7 @@ h3 {
   flex-direction: column;
   justify-content: space-evenly;
   height: 100%;
-  width: 45%;
+  width: 50%;
   font-family: "Coming Soon", cursive;
 }
 
@@ -208,7 +209,6 @@ h3 {
   font-family: "Coming Soon", cursive;
   border-radius: 10px;
   border-color: gray;
-  background-color:white;
   color: black;
   font-weight: bold;
 }
@@ -228,7 +228,6 @@ h3 {
   font-family: "Coming Soon", cursive;
   border-radius: 10px;
   border-color: gray;
-  background-color:white;
   color: black;
   font-weight: bold;
 }
@@ -239,7 +238,6 @@ h3 {
   font-family: "Coming Soon", cursive;
   border-radius: 10px;
   border-color: gray;
-  background-color:white;
   color: black;
   font-weight: bold;
 }
@@ -250,11 +248,12 @@ h3 {
   flex-direction: column;
   justify-content: flex-start;
   height: 95%;
-  width: 55%;
+  width: 50%;
   align-items: center;
 }
 
 h4 {
   font-size: 2.5vh;
   color:rgb(235, 132, 36);
+  font-weight: lighter;
 }
