@@ -25,7 +25,7 @@ body {
 h1 {
   color: white;
   text-align: center;
-  font-family: "Coming Soon", cursive;
+  font-family: 'Poppins', sans-serif;
   font-size: 8vh;
   margin-top: 4vh;
 }
@@ -34,7 +34,7 @@ a {
   color:rgb(235, 132, 36);
   margin: 10px;
   text-decoration: none;
-  font-family: "Coming Soon", cursive;
+  font-family: 'Poppins', sans-serif;
   font-style: italic;
   font-size: 5vh;
   
@@ -43,6 +43,6 @@ a {
 p {
   color: white;
   text-align: left;
-  font-family: "Coming Soon", cursive;
+  font-family: 'Poppins', sans-serif;
   margin: 2vw;
 }

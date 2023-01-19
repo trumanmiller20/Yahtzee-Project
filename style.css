@@ -35,7 +35,7 @@
 
 h1 {
   color: white;
-  font-family: "Coming Soon", cursive;
+  font-family: 'Poppins', sans-serif;
   font-size: 7vh;
   font-weight: lighter;
   text-align: center;
@@ -48,7 +48,7 @@ a {
   color:rgb(235, 132, 36);
   text-decoration: none;
   font-style: italic;
-  font-family: "Coming Soon", cursive;
+  font-family: 'Poppins', sans-serif;
 }
 
 .container {
@@ -62,7 +62,7 @@ a {
 
 .score-button {
   width: 80%;
-  font-family: "Coming Soon", cursive;
+  font-family: 'Poppins', sans-serif;
   border-radius: 10px;
   border-color: gray;
   font-weight: bold;
@@ -73,7 +73,7 @@ a {
   width: 10%;
   text-align: center;
   font-size: 3vh;
-  font-family: "Coming Soon", cursive;
+  font-family: 'Poppins', sans-serif;
   color: white;
 }
 
@@ -183,7 +183,7 @@ a {
   justify-content: space-evenly;
   align-items: center;
   height: 18%;
-  font-family: "Coming Soon", cursive;
+  font-family: 'Poppins', sans-serif;
 }
 
 h3 {
@@ -200,13 +200,13 @@ h3 {
   justify-content: space-evenly;
   height: 100%;
   width: 50%;
-  font-family: "Coming Soon", cursive;
+  font-family: 'Poppins', sans-serif;
 }
 
 .hold {
   height: 5%;
   font-size: small;
-  font-family: "Coming Soon", cursive;
+  font-family: 'Poppins', sans-serif;
   border-radius: 10px;
   border-color: gray;
   color: black;
@@ -218,14 +218,14 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-family: "Coming Soon", cursive;
+  font-family: 'Poppins', sans-serif;
   color: rgb(235, 132, 36);
   font-size: 5vh;
 }
 
 #reset-game {
   height: 7%;
-  font-family: "Coming Soon", cursive;
+  font-family: 'Poppins', sans-serif;
   border-radius: 10px;
   border-color: gray;
   color: black;
@@ -235,7 +235,7 @@ h3 {
 #roll {
   height: 10%;
   margin-top: 3%;
-  font-family: "Coming Soon", cursive;
+  font-family: 'Poppins', sans-serif;
   border-radius: 10px;
   border-color: gray;
   color: black;
