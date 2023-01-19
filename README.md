@@ -7,7 +7,7 @@
 3) Credits
 ***
 ### ***Description:*** 
-Yahtzee is a dice game based on Poker. The object of the game is to roll certain combinations of numbers with five dice. At each turn you throw dice trying to get a good combination of numbers; different combinations give different scores. While luck plays a big role in Yahtzee, strategy makes a significant difference.
+Yahtzee is a dice game based on Poker. The object of the game is to roll certain combinations of numbers with five dice. Each round the player has three opportunities to throw five dice, attempting to achieve a good combination of numbers with different combinations producing different scores. While luck plays a role in Yahtzee, strategy can make a significant difference.
 ***
 ### ***Technologies Used***
 * HTML 
